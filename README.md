@@ -9,6 +9,8 @@ It provides a server app that:
 * defines an error handling method that sends an
 HTTP 401 response status for invalid requests.
 
+The only npm packages required beyond the basic express application are `jsonwebtoken` to sign requests, and `express-jwt` to check the validity of a received token. The `cors` package is also included in the project for conveniece, and it is used by default, but it is not necessary when using the authorization features.
+
 ## RS256 keys
 
 Note that the server requires the presence of [RS256] (https://stackoverflow.com/questions/39239051/rs256-vs-hs256-whats-the-difference) private and public keys to operate, which by default are `keys/jwtRS256.key` and `keys/jwtRS256.pub.key`. The key files are not provided here but should be generated as key pair for your own use, for example [using ssh-keygen followed by openssl](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9):
