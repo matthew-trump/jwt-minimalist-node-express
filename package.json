@@ -1,0 +1,12 @@
+{
+  "name": "node-jwt-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Matthew Trump <matthew.trump@gmail.com> (http://www.decumanus.com/)",
+  "license": "ISC"
+}
