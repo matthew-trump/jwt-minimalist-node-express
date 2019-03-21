@@ -1,7 +1,7 @@
 {
-  "name": "node-jwt-example",
+  "name": "node-express-jwt-example",
   "version": "1.0.0",
-  "description": "template for a node express project with jwt",
+  "description": "template for a node express project with jwt token authorization",
   "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
