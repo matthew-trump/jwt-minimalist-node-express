@@ -13,7 +13,7 @@ The only npm packages required beyond the basic express application are `jsonweb
 
 ## RS256 keys
 
-Note that the server requires the presence of [RS256] (https://stackoverflow.com/questions/39239051/rs256-vs-hs256-whats-the-difference) private and public keys to operate, which by default are `keys/jwtRS256.key` and `keys/jwtRS256.pub.key`. The key files are not provided here but should be generated as key pair for your own use, for example [using ssh-keygen followed by openssl](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9):
+Note that the server requires the presence of a [private/public keypair](https://stackoverflow.com/questions/39239051/rs256-vs-hs256-whats-the-difference) to operate. By default the app looks for these files respectively at `keys/jwtRS256.key` and `keys/jwtRS256.pub.key`. The key files themselves are not provided here but should be generated as key pair for your own use, for example [this method](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9):
 
 ```
 ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
@@ -21,7 +21,7 @@ ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
 openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
 ```
 
-Even for the same algorithm, key generating methods can result in output of slightly different file formats, only some of which work with this app. The app has been successfully tested with private keys that look like this:
+Even for the same algorithm, key generating methods can result in output of slightly different file formats (line breaks, etc). The app here has been successfully tested with RS256 private keys that look like this:
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -33,7 +33,7 @@ xg0JzDDEkEUgHPbSugXu2UROLMGKY08uoXXlUZ0Iz8dR44VhKFyCk95ai7BRxw==
 -----END RSA PRIVATE KEY-----
 ```
 
-and public keys that look like this:
+and  RS256 public keys that look like this:
 
 ```
 -----BEGIN PUBLIC KEY-----
