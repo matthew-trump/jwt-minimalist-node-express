@@ -1,11 +1,14 @@
 /**
- * lexolang-backend server.js
+ * Node Express JWT Example
+ * 
  * run with 'node ./server.js'
  */
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
+
+const cors = require('cors');
 const bodyParser = require('body-parser');
+
 const api = require('./api');
 
 const app = express();
@@ -20,7 +23,7 @@ app.use("/api", api);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`Lexolang Backend App listening on port ${PORT}`);
+    console.log(`Node Express JWT Example listening on port ${PORT}`);
     console.log(`ENVIRONMENT ${process.env.ENVIRONMENT}`)
     console.log('Press Ctrl+C to quit.');
 
