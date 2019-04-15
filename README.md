@@ -9,7 +9,9 @@ It provides a server app that:
 * defines an error handling method that sends an
 HTTP 401 response status for invalid requests.
 
-The only npm packages required beyond the basic express application are `jsonwebtoken` to sign requests, and `express-jwt` to check the validity of a received token. The `cors` package is also included in the project for conveniece, and it is used by default, but it is not necessary when using the authorization features.
+The only npm packages required beyond the basic express application are `jsonwebtoken` to sign requests, and `express-jwt` to check the validity of a received token. 
+
+The `cors` package is also included in the project for conveniece, and is enabled by default. 
 
 ## RS256 keys
 
