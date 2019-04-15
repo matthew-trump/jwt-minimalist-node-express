@@ -9,16 +9,26 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const api = require('./api');
+const apiUnprotected = require('./api-unprotected');
+const apiProtected = require('./api-protected');
+
+const { jwtLogin, jwtUnauthorizedError, jwtAuthorization } = require('./jwt-auth');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(express.urlencoded());
 
-app.use('/', express.static(path.join(__dirname, 'public')))
-app.use("/api", api);
+app.use('/', express.static(path.join(__dirname, 'public')));
+
+app.use('/login', jwtLogin);
+
+app.use('/unprotected', apiUnprotected);
+
+app.use("/protected",
+    jwtAuthorization,
+    jwtUnauthorizedError,
+    apiProtected);
 
 const PORT = process.env.PORT || 8080;
 
